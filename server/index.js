@@ -4,7 +4,7 @@ const controller = require('./controller');
 require('dotenv').config();
 
 // Inicia o servidor
-app.listen(3001, process.env.SERVER_HOST, () => { 
+app.listen(process.env.SERVER_PORT, process.env.SERVER_HOST, () => { 
   console.error(`Server listening on ${process.env.SERVER_HOST}:${process.env.SERVER_PORT}`);
 });
 
