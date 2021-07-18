@@ -1,6 +1,6 @@
 ## Etapas de instalação:
 - Baixe o app com o comando: $ git clone https://github.com/mfabiodias/tictactoe.git;
-- Instalar as dependências: $ npm install;
+- Instalar as dependências: $ cd tictactoe && npm install;
 - Gerar os assets do aplicativo: $ npm run build;
 - Editar e modificar arquivo .ENV, se necessário;
 - Iniciar o aplicativo: $ npm start
