@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { getWinner, winCheck, getSugestion } from './helpers';
+import { getWinner, winCheck, getSugestion} from './helpers';
+import axios from 'axios';
 import './App.css';
 
 function App() {
@@ -11,6 +12,30 @@ function App() {
   const [currentPlayer, setCurrentPlayer] = useState(player[Number(!player.indexOf(robot))]);
   const [winner, setWinner] = useState(null);
   const [level, setLevel] = useState("1");
+  const [users, setUsers] = useState(null);
+  const host = "http://localhost";
+  const port = 3001;
+  
+  const getGameData = () => {
+    axios.get(`${host}:${port}/api/users`)
+    .then(res => {
+      setUsers(res.data);
+    })
+  } 
+
+  const updateGameUser = (name) => {
+    axios.put(`${host}:${port}/api/user/${name}`)
+    .then(res => {
+      setUsers(res.data);
+    })
+  } 
+
+  const resetGameData = () => {
+    axios.get(`${host}:${port}/api/user/reset`)
+    .then(res => {
+      setUsers(res.data);
+    })
+  } 
 
   // Eventos dos jogadores
   const handleClick = (idx) => {
@@ -27,7 +52,7 @@ function App() {
   // Mudar dificuldade do jogo
   const handleChange = (e) => {
     setLevel(e.target.value);
-    resetGame();
+    restartGame();
   }
 
   // Lógica do adversário
@@ -37,7 +62,7 @@ function App() {
   }
 
   // Reiniciar partida
-  const resetGame = () => {
+  const restartGame = () => {
     setCurrentPlayer(winner !== "E" && !!winner ? winner : player[Number(!player.indexOf(robot))]);
     setBoard(boardData);
     setWinner(null);
@@ -45,6 +70,9 @@ function App() {
 
   // Lógica do jogo
   const drawGame = () => {
+
+    if(!users) setUsers(getGameData());
+
     let winner = "";
     
     // Checar se existe um vencedor
@@ -52,8 +80,10 @@ function App() {
       if(cells.every(cell => cell === "X")) {
         winner = "X";
         setWinner(winner);
+        updateGameUser('robot');
       } else if(cells.every(cell => cell === "O")) {
         winner = "O";
+        updateGameUser('user');
         setWinner(winner);
       }
     });
@@ -81,6 +111,11 @@ function App() {
           <option value="2">Médio</option>
           <option value="3">Difícil</option>
         </select>
+        <div className="users">
+          { !!users &&
+            users.map((user, idx) => <div key={idx}  className={`name ${user.name}`}>{user.name === "user" ? "Você" : "Máquina"}: {user.score}</div> )
+          }
+        </div>
       </header>
 
       <main>
@@ -99,7 +134,13 @@ function App() {
             {getWinner(winner, currentPlayer, robot)}
           </span>
         </h2>
-        {winner && <button className="reset-button" onClick={resetGame}>Recomeçar o Jogo</button>}
+        {
+          winner && 
+          <section className="container space-between">
+            <div className="item"><button className="reset-button" onClick={restartGame}>Recomeçar o Jogo</button></div>
+            <div className="item"><button className="reset-game" onClick={resetGameData}>Zerar pontuação</button></div>
+          </section>
+        }        
       </footer>
     </>
   );

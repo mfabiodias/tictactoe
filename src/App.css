@@ -2,7 +2,6 @@
   --O-color: #2196f3;
   --X-color: #f44336;
   --E-color: #777;
-  --green: #4caf50;
 }
 
 * {
@@ -92,14 +91,22 @@ footer {
   color: var(--E-color);
 }
 
-.reset-button {
+.reset-button, .reset-game {
   padding: 0.8rem 1.5rem;
   border: none;
   border-radius: 5px;
   box-shadow: 0 1px 3px 0 rgb(0,0,0,0.1), 0, 1px 2px 0 rgb(0,0,0,0.06);
-  background-color: var(--green);
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.reset-button {
+  background-color: var(--O-color);
+}
+
+.reset-game {
+  background-color: var(--X-color);
 }
 
 .custom-select {
@@ -119,5 +126,76 @@ select {
   border-radius: 0;
   cursor: pointer;
   align-items: center;
-  margin-bottom: 20px;
+}
+
+.users {
+  display: grid;
+  grid-template-columns: repeat(2, 180px);
+  grid-template-rows: repeat(1, 30px);
+  margin: 10px 0 10px 8px;
+  gap: 1rem;
+}
+
+.name {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #00000066;
+}
+
+.name.user {
+  background-color: var(--O-color);
+}
+
+.name.robot {
+  background-color: var(--X-color);
+}
+
+.flex-start {
+	justify-content: flex-start;
+}
+
+.flex-end {
+	justify-content: flex-end;
+}
+
+.center {
+	justify-content: center;
+}
+
+.space-between {
+	justify-content: space-between;
+}
+
+.space-around {
+	justify-content: space-around;
+}
+
+/* Flex Container */
+.container {
+	max-width: 420px;
+	margin: 0 auto;
+	display: flex;
+}
+
+.column {
+	min-height: 200px;
+	flex-direction: column;
+}
+
+/* Flex Item */
+.item {
+	margin: 5px;
+	padding: 0 10px;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+/* Indica que o conteúdo deve se expandir */
+.flex {
+	flex: 1;
 }

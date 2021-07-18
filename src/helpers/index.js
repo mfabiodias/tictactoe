@@ -70,6 +70,8 @@ export const getSugestion = (board, level) => {
 
     if(!!humanNextOptions[1].length) machineNextOptions[1] = humanNextOptions[1];
 
+    console.log(`Level ${level} ativo!`)
+
     let sugestion;
     if(parseInt(level) === 1) {
       sugestion = options;
