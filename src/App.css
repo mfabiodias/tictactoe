@@ -22,15 +22,15 @@ body {
 
 .title {
   text-align: center;
-  font-size: 3rem;
+  font-size: 2rem;
   color: #555;
   margin-bottom: 2rem;
 }
 
 .board {
   display: grid;
-  grid-template-columns: repeat(3, 160px);
-  grid-template-rows: repeat(3, 160px);
+  grid-template-columns: repeat(3, 120px);
+  grid-template-rows: repeat(3, 120px);
   gap: 1rem;
 }
 
@@ -100,4 +100,26 @@ footer {
   background-color: var(--green);
   color: #fff;
   font-size: 1.2rem;
+}
+
+.custom-select {
+  width:200px;
+  position: relative;
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+
+
+select {
+  height: 40px;
+  width: 100% !important;
+  border: 1px solid #a1a1a1;
+  border-radius: 0;
+  cursor: pointer;
+  align-items: center;
+  margin-bottom: 20px;
 }
