@@ -1,4 +1,4 @@
-const model = require('../model');
+const model = require('../models');
 
 const gameData = () => model.getGameData();
 const gameReset = () => model.resetGameData();

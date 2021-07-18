@@ -1,9 +1,11 @@
 const express = require("express");
 const cors = require('cors');
 const app = express();
-const controller = require('./controller');
+const controller = require('./controllers');
+const path = __dirname + '/views/';
 require('dotenv').config();
 
+app.use(express.static(path));
 app.use(cors());
 
 // Inicia o servidor
@@ -27,4 +29,8 @@ app.get("/api/user/reset", async (req, res) => {
 app.put("/api/user/:name", async (req, res) => { 
   const data = await controller.gameUpdate(req.params.name);
   res.send (data);
+});
+
+app.get('/', function (req,res) {
+  res.sendFile(path + "index.html");
 });
