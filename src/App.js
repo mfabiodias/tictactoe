@@ -30,7 +30,7 @@ function App() {
     resetGame();
   }
 
-  // Lógica do robo
+  // Lógica do adversário
   const autoGame = () => {
     const sugestion = getSugestion(board, level);
     handleClick(sugestion);
