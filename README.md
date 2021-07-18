@@ -22,3 +22,13 @@
 - Contabilização das vitórias da máquina e do usuário;
 - Possibilidade de reinicializar o contador de vitórias do jogo;
 
+## Imagens do Jogo
+
+[![Imagem inicial](https://photos.app.goo.gl/ysdCqPeBjk612uET6)](https://photos.app.goo.gl/ysdCqPeBjk612uET6)
+
+[![Imagem vencedor](https://photos.app.goo.gl/UTmY8kdszwp78Drz8)](https://photos.app.goo.gl/UTmY8kdszwp78Drz8)
+
+
+
+
+
