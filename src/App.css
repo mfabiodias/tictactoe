@@ -112,8 +112,6 @@ footer {
   display: none; /*hide original SELECT element:*/
 }
 
-
-
 select {
   height: 40px;
   width: 100% !important;

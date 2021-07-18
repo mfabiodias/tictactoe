@@ -1,10 +1,11 @@
 const express = require("express");
 const app = express();
 const controller = require('./controller');
+require('dotenv').config();
 
 // Inicia o servidor
-app.listen(3001, () => { 
-  console.log("Server started (http://localhost:3001/) !");
+app.listen(3001, process.env.SERVER_HOST, () => { 
+  console.error(`Server listening on ${process.env.SERVER_HOST}:${process.env.SERVER_PORT}`);
 });
 
 // Busca dados dos jogadores
