@@ -44,7 +44,7 @@ function App() {
   }
 
   // Lógica do jogo
-  const checkWinner = () => {
+  const drawGame = () => {
     let winner = "";
     
     // Checar se existe um vencedor
@@ -69,7 +69,7 @@ function App() {
   }
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(checkWinner, [board, currentPlayer]);
+  useEffect(drawGame, [board, currentPlayer]);
 
 
   return (
