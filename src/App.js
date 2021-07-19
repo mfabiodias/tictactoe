@@ -3,6 +3,19 @@ import { getWinner, winCheck, getSugestion} from './helpers';
 import axios from 'axios';
 import './App.css';
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  useParams
+} from "react-router-dom";
+
+
+
+
+
 function App() {
 
   const boardData = Array(9).fill("");
@@ -13,25 +26,23 @@ function App() {
   const [winner, setWinner] = useState(null);
   const [level, setLevel] = useState("1");
   const [users, setUsers] = useState(null);
-  const host = "http://localhost";
-  const port = 3001;
   
   const getGameData = () => {
-    axios.get(`${host}:${port}/api/users`)
+    axios.get(`/api/users`)
     .then(res => {
       setUsers(res.data);
     })
   } 
 
   const updateGameUser = (name) => {
-    axios.put(`${host}:${port}/api/user/${name}`)
+    axios.put(`/api/user/${name}`)
     .then(res => {
       setUsers(res.data);
     })
   } 
 
   const resetGameData = () => {
-    axios.get(`${host}:${port}/api/user/reset`)
+    axios.get(`/api/user/reset`)
     .then(res => {
       setUsers(res.data);
     })
