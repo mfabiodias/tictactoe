@@ -3,14 +3,14 @@ const cors = require('cors');
 const app = express();
 const controller = require('./controllers');
 const path = __dirname + '/views/';
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3001;
 
 app.use(express.static(path));
 app.use(cors());
 
 // Inicia o servidor
 app.listen(port, () => { 
-  console.log(`Server listening on localhost`);
+  console.log(`Server listening on localhost on port ${process.env.PORT}`);
 });
 
 // Busca dados dos jogadores
