@@ -3,12 +3,13 @@ const cors = require('cors');
 const app = express();
 const controller = require('./controllers');
 const path = __dirname + '/views/';
+const port = process.env.PORT || 8080;
 
 app.use(express.static(path));
 app.use(cors());
 
 // Inicia o servidor
-app.listen(3000, () => { 
+app.listen(port, () => { 
   console.log(`Server listening on localhost`);
 });
 
