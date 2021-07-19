@@ -3,14 +3,13 @@ const cors = require('cors');
 const app = express();
 const controller = require('./controllers');
 const path = __dirname + '/views/';
-require('dotenv').config();
 
 app.use(express.static(path));
 app.use(cors());
 
 // Inicia o servidor
-app.listen(process.env.SERVER_PORT, process.env.SERVER_HOST, () => { 
-  console.log(`Server listening on ${process.env.SERVER_HOST}:${process.env.SERVER_PORT}`);
+app.listen(3000, () => { 
+  console.log(`Server listening on localhost`);
 });
 
 // Busca dados dos jogadores
