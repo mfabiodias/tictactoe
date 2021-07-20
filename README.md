@@ -23,7 +23,7 @@
 
 ## Imagens do Jogo
 
-[Jogo em Produção](https://tictoctoe-app.herokuapp.com)
+[Link do jogo em produção](https://tictoctoe-app.herokuapp.com)
 
 
 [![Imagem inicial](https://lh3.googleusercontent.com/pw/AM-JKLWIqrVDsR4FMr2VLaVMzupie417b4boEviEx0et9xKpd4SxHbCoXtOK1LpD5P1YtQED2g-abtr1qlY4UJBdl8SAetUYH7hbT1PMCB9p1XkOZnVFGkUHsYjjl71EyPv-RiDZhQK-GxDaDnZYowtvtG8=w506-h578-no?authuser=0)](https://lh3.googleusercontent.com/pw/AM-JKLWIqrVDsR4FMr2VLaVMzupie417b4boEviEx0et9xKpd4SxHbCoXtOK1LpD5P1YtQED2g-abtr1qlY4UJBdl8SAetUYH7hbT1PMCB9p1XkOZnVFGkUHsYjjl71EyPv-RiDZhQK-GxDaDnZYowtvtG8=w506-h578-no?authuser=0)
