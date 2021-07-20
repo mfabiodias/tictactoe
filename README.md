@@ -15,12 +15,11 @@
 
 ## Funcionalidades
 
-- 3 níveis de dificuldade, Fácil, Médio e Difícil;
+- 3 níveis de dificuldade (Fácil, Médio e Difícil);
 - Seu adversário é a máquina;
-- Quem inicia a partida é sempre o vencedor, em caso de empate o inicio é do usuário;
-- Posibilidade de alternar os níveis de dificuldade;
-- Contabilização das vitórias da máquina e do usuário;
-- Possibilidade de reinicializar o contador de vitórias do jogo;
+- O início da partida é sempre o vencedor, em caso de empate a partida é iniciada pelo usuário;
+- Contabilização das vitórias (máquina/usuário);
+- Função para zerar o contador de vitórias no jogo;
 
 ## Imagens do Jogo
 
